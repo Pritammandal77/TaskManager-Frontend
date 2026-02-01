@@ -1,6 +1,6 @@
 # Task Manager – Frontend (Next.js)
 
-A modern **Task Manager frontend application** built using **Next.js (App Router)** and **Tailwind CSS**, designed to work seamlessly with the Task Manager backend API. This project was created as part of an **internship assignment**, focusing on clean UI, proper API integration, and real-world frontend practices.
+A modern **Task Manager frontend application** built using **Next.js (App Router)** and **Tailwind CSS**, designed to work seamlessly with the Task Manager backend API, focusing on clean UI, proper API integration, and real-world frontend practices.
 
 ---
 
