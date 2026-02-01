@@ -1,5 +1,6 @@
 "use client";
 
+import Loader1 from "@/components/Loaders/Loader1";
 import { deleteTask, fetchAllTasks, updateTask } from "@/lib/taskApi";
 import { formatDate } from "@/utils/formatDate";
 import Link from "next/link";
@@ -29,7 +30,7 @@ function Page() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center text-green-700">
-        Loading tasks...
+        <Loader1/>
       </div>
     );
   }

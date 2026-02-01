@@ -22,7 +22,7 @@ function Page() {
             toast.success("task added successfully")
             setTitle("")
             setDescription("")
-            router.push("/home")
+            router.push("/")
         } catch (error) {
             console.log("something went wrong , while adding task")
             toast.error("Error while adding the task")
