@@ -32,9 +32,9 @@ A modern **Task Manager frontend application** built using **Next.js (App Router
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="./public/screenshots/loginPage.png" width="250" />
-  <img src="./public/screenshots/add-task-form.png" width="250" />
-  <img src="./public/screenshots/tasks.png" width="250" />
+  <img src="./public/loginPage.png" width="250" />
+  <img src="./public/add-task-form.png" width="250" />
+  <img src="./public/tasks.png" width="250" />
 </p>
 
 ---
