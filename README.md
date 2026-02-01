@@ -28,6 +28,20 @@ A modern **Task Manager frontend application** built using **Next.js (App Router
 
 ---
 
+
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login Page](./public/loginPage.png)
+
+### ➕ Add Task Form
+![Add Task Form](./public/add-task-form.png)
+
+### 📋 Tasks Page
+![Tasks Page](./public/tasks.png)
+
+---
+
 ## ⚙️ Environment Variables
 
 Create a `.env.local` file in the root directory:
