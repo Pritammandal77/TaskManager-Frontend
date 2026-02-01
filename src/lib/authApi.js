@@ -2,17 +2,21 @@ import axios from "axios";
 import axiosInstance from "./axiosInstance";
 
 export const registerUser = (data) => {
-  return axios.post("http://localhost:8000/api/v1/user/register", data);
+  const res = axiosInstance.post("/api/v1/user/register", data);
+  return res;
 };
 
 export const loginUser = (data) => {
-  return axiosInstance.post("/api/v1/user/login", data);
+  const res = axiosInstance.post("/api/v1/user/login", data);
+  return res;
 };
 
 export const logoutUser = () => {
-  return axiosInstance.post("/api/v1/user/logout");
+  const res = axiosInstance.post("/api/v1/user/logout");
+  return res;
 };
 
-// export const getProtectedData = () => {
-//   return axiosInstance.get("api/v1/user/protected");
-// };
+export const fetchCurrUser = () => {
+  const res = axiosInstance.get("/api/v1/user/me")
+  return res;
+}

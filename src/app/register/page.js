@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { registerUser } from "@/lib/authApi";
 import Link from "next/link";
+import { toast } from "sonner";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");
@@ -13,10 +14,10 @@ export default function RegisterPage() {
     try {
       setLoading(true);
       await registerUser({ email, password });
-      alert("Registered successfully 🎉");
+      toast.success("Registered successfully");
       window.location.href = "/login";
     } catch (err) {
-      alert(err.response?.data?.message || "Something went wrong");
+      toast.error("Something went wrong");
     } finally {
       setLoading(false);
     }

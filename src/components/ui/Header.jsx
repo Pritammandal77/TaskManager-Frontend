@@ -5,26 +5,24 @@ import LogoutButton from "./LogoutButton";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import axiosInstance from "@/lib/axiosInstance";
+import { fetchCurrUser } from "@/lib/authApi";
 
 export default function Header() {
 
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const fetchCurrUser = async () => {
+    const getCurrUser = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/v1/user/me",
-          {
-            withCredentials: true
-          }
-        )
+        const res = await fetchCurrUser();
+        console.log(res)
         setUser(res)
       } catch (error) {
         console.log(error)
       }
     }
 
-    fetchCurrUser();
+    getCurrUser();
   }, []);
 
 

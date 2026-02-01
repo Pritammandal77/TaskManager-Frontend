@@ -58,7 +58,6 @@ function Page() {
                         </p>
                     </div>
 
-                    {/* Description */}
                     <div className="mb-6">
                         <label className="block text-md font-medium text-gray-700 mb-1">
                             Description
@@ -76,7 +75,6 @@ function Page() {
                         </p>
                     </div>
 
-                    {/* Action */}
                     <div className="flex justify-end ">
                         <button
                             onClick={handleAddTask}
