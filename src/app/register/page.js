@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { registerUser } from "@/lib/authApi";
+import Link from "next/link";
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("");
@@ -22,14 +23,14 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-100 via-green-100 to-blue-200 px-4">
+    <div className="min-h-[90vh] flex items-center justify-center bg-linear-to-br from-blue-100 via-green-100 to-blue-200 px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
         {/* Title */}
-        <h2 className="text-3xl font-bold text-center text-green-600 mb-2">
+        <h2 className="text-3xl font-bold text-center text-blue-600 mb-2">
           Create Account
         </h2>
         <p className="text-center text-gray-500 mb-6">
-          Join TaskManager and stay productive
+          Join Taskifier and stay productive
         </p>
 
         {/* Email */}
@@ -65,8 +66,7 @@ export default function RegisterPage() {
           onClick={handleRegister}
           disabled={loading}
           className="w-full py-2 rounded-lg text-white font-semibold
-                     bg-linear-to-r from-green-500 to-blue-500
-                     hover:from-green-600 hover:to-blue-600
+                  bg-blue-500
                      transition-all duration-200 disabled:opacity-60"
         >
           {loading ? "Creating account..." : "Register"}
@@ -79,7 +79,9 @@ export default function RegisterPage() {
             onClick={() => (window.location.href = "/login")}
             className="text-blue-600 hover:underline cursor-pointer"
           >
-            Login
+            <Link href="/login">
+              Login
+            </Link>
           </span>
         </p>
       </div>

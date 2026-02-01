@@ -39,6 +39,7 @@
 
 import { useState } from "react";
 import { loginUser } from "@/lib/authApi";
+import Link from "next/link";
 
 export default function Page() {
     const [email, setEmail] = useState("");
@@ -59,14 +60,14 @@ export default function Page() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-100 via-green-100 to-blue-200">
+        <div className="min-h-[90vh] flex items-center justify-center bg-linear-to-br from-blue-100 via-green-100 to-blue-200 px-4">
             <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
                 {/* Title */}
                 <h2 className="text-3xl font-bold text-center text-blue-600 mb-2">
                     Welcome Back
                 </h2>
                 <p className="text-center text-gray-500 mb-6">
-                    Login to continue to TaskManager
+                    Login to continue to Taskifier
                 </p>
 
                 {/* Email */}
@@ -101,9 +102,7 @@ export default function Page() {
                 <button
                     onClick={handleLogin}
                     disabled={loading}
-                    className="w-full py-2 rounded-lg text-white font-semibold
-                     bg-linear-to-r from-blue-500 to-green-500
-                     hover:from-blue-600 hover:to-green-600
+                    className="w-full py-2 rounded-lg text-white font-semibold bg-blue-500
                      transition-all duration-200 disabled:opacity-60"
                 >
                     {loading ? "Logging in..." : "Login"}
@@ -113,7 +112,9 @@ export default function Page() {
                 <p className="text-center text-sm text-gray-500 mt-6">
                     Don’t have an account?{" "}
                     <span className="text-blue-600 hover:underline cursor-pointer">
-                        Register
+                        <Link href="/register">
+                            Register
+                        </Link>
                     </span>
                 </p>
             </div>

@@ -18,7 +18,7 @@ export default function Header() {
             withCredentials: true
           }
         )
-        console.log(res)
+        setUser(res)
       } catch (error) {
         console.log(error)
       }
@@ -27,11 +27,6 @@ export default function Header() {
     fetchCurrUser();
   }, []);
 
-  // if (!user) return <p>Loading...</p>;
-
-  if (user) {
-    console.log(user)
-  }
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -43,7 +38,7 @@ export default function Header() {
 
           <nav className="flex space-x-5 md:space-x-12 text-[17px] font-semibold">
             <Link
-              href="/home"
+              href="/"
               className="text-gray-800 hover:text-green-800 transition"
             >
               Home
@@ -52,14 +47,27 @@ export default function Header() {
               href="/addtask"
               className="text-gray-800 hover:text-green-800 transition"
             >
-              Add Task
+              Add task
             </Link>
           </nav>
 
-          {/* Logout Button */}
-          <div className="flex items-center space-x-4">
-            <LogoutButton />
-          </div>
+          {
+            user ?
+              <div className="flex items-center space-x-4">
+                <LogoutButton />
+              </div>
+              :
+              <div>
+                <Link href="/register">
+                  <button
+                    className="bg-green-600 text-black cursor-pointer px-3 py-1 text-md font-medium
+                         hover:bg-green-700 transition rounded-xl"
+                  >
+                    Log In
+                  </button>
+                </Link>
+              </div>
+          }
 
         </div>
       </div>

@@ -1,22 +1,31 @@
 "use client";
 
 import { addTask } from "@/lib/taskApi";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "sonner";
 
 function Page() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
-    const handleAddTask = async() => {
+    const router = useRouter();
+
+    const handleAddTask = async () => {
         if (!title || !description) {
-            alert("Please fill all fields");
+            toast.warning("Please fill all fields");
             return;
         }
+
         try {
             const res = await addTask(title, description)
-            console.log(res)
+            toast.success("task added successfully")
+            setTitle("")
+            setDescription("")
+            router.push("/home")
         } catch (error) {
             console.log("something went wrong , while adding task")
+            toast.error("Error while adding the task")
         }
     };
 
@@ -24,20 +33,14 @@ function Page() {
         <div className="min-h-screen  px-4 py-12 bg-linear-to-b from-green-100 to-green-50">
             <div className="max-w-3xl mx-auto">
 
-                {/* Page Header */}
-                <div className="mb-8">
+                <div className="mb-5">
                     <h1 className="text-2xl md:text-3xl font-semibold text-gray-800">
                         Add a new task
                     </h1>
-                    <p className="text-md text-gray-600 mt-1">
-                        Add tasks to stay organized and track your progress efficiently.
-                    </p>
                 </div>
 
-                {/* Form Card */}
                 <div className="bg-white border border-gray-200 rounded-md p-6">
 
-                    {/* Title */}
                     <div className="mb-5">
                         <label className="block text-md font-medium text-gray-700 mb-1">
                             Task Title

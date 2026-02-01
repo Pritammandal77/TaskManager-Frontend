@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientAuthProvider from "@/components/ClientAuthProvider";
 import Header from "@/components/ui/Header";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +26,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* <ClientAuthProvider > */}
-          <Header />
+        <Header />
+        <Toaster
+          position="top-right"
+          richColors
+          closeButton
+        />
         {/* </ClientAuthProvider > */}
         {children}
       </body>
@@ -34,26 +40,3 @@ export default function RootLayout({ children }) {
 }
 
 
-
-
-
-// import Header from '@/components/ui/Header';
-// import React from 'react';
-// import "./globals.css";
-// import LogoutButton from '@/components/ui/LogoutButton';
-
-// function MainLayout({ children }) {
-//   return (
-//     <>
-//       <html lang="en">
-//         <body>
-//           <Header />
-//           <LogoutButton />
-//           {children}
-//         </body>
-//       </html>
-//     </>
-//   );
-// }
-
-// export default MainLayout;
