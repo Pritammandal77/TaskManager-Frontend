@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Manager – Frontend (Next.js)
 
-## Getting Started
+A modern **Task Manager frontend application** built using **Next.js (App Router)** and **Tailwind CSS**, designed to work seamlessly with the Task Manager backend API. This project was created as part of an **internship assignment**, focusing on clean UI, proper API integration, and real-world frontend practices.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+* 📝 Create, view, update & delete tasks
+* 🔄 Task status update (Pending / Completed)
+* ⚡ Optimistic UI updates for better UX
+* 🔔 Toast notifications using **Sonner**
+* 🎨 Clean & responsive UI using **Tailwind CSS**
+* 🔐 Cookie-based authentication support
+* ♻️ Axios instance with auto token refresh
+* 📅 Consistent date & time formatting using utility functions
+
+---
+
+## 🛠 Tech Stack
+
+* **Framework:** Next.js (App Router)
+* **Styling:** Tailwind CSS
+* **API Calls:** Axios
+* **Notifications:** Sonner
+* **State Management:** React useState / useEffect
+* **Authentication:** JWT (handled via backend cookies)
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> ⚠️ This should point to your **backend server URL**.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Project Setup (Local)
 
-## Learn More
+### 1️⃣ Clone the Repository
 
-To learn more about Next.js, take a look at the following resources:
+```
+git clone https://github.com/Pritammandal77/TaskManager-Frontend.git
+cd TaskManager-Frontend
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2️⃣ Install Dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+npm install
+```
 
-## Deploy on Vercel
+### 3️⃣ Run the Development Server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The app will run on:
+👉 **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## 🔗 Backend Dependency
+
+This frontend depends on the **Task Manager Backend API**.
+
+Make sure the backend is:
+
+* Running locally or deployed
+* Cookies enabled (`credentials: true` in Axios)
+* CORS configured properly
+
+---
+
+## 🔁 Axios & Token Refresh Flow
+
+* Axios instance is configured in `axiosInstance.js`
+* Cookies are used for authentication
+* `ClientAuthProvider` triggers token refresh on app load
+* Access token is refreshed silently using refresh token
+
+## 📌 Deployment
+
+This project is currently configured for **local usage**, but can be easily deployed on:
+
+* Vercel
+* Netlify
+
+---
+
+## 🧠 Notes
+
+* Project focuses on **clean architecture & real-world patterns**
+* Proper error handling & UI updates are implemented
+
+---
+
+## 👨‍💻 Author
+
+**Pritam Mandal**
+Full Stack Developer
+
+---
+
+⭐ If you found this project useful, don’t forget to star the repo!
