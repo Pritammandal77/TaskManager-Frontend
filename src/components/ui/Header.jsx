@@ -35,32 +35,24 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-4 sm:px-6 lg:px-14">
         <div className="flex justify-between items-center h-16">
-          {/* Logo / App Name */}
-          <Link href="/" className="text-2xl font-bold text-blue-600">
-            TaskMaster
+          <Link href="/" className="text-2xl font-bold text-green-800">
+            Taskifier
           </Link>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex space-x-6">
+          <nav className="flex space-x-5 md:space-x-12 text-[17px] font-semibold">
             <Link
-              href="/"
-              className="text-gray-700 hover:text-blue-600 transition"
+              href="/home"
+              className="text-gray-800 hover:text-green-800 transition"
             >
               Home
             </Link>
             <Link
-              href="/tasks"
-              className="text-gray-700 hover:text-blue-600 transition"
+              href="/addtask"
+              className="text-gray-800 hover:text-green-800 transition"
             >
-              Tasks
-            </Link>
-            <Link
-              href="/profile"
-              className="text-gray-700 hover:text-blue-600 transition"
-            >
-              Profile
+              Add Task
             </Link>
           </nav>
 
@@ -69,23 +61,6 @@ export default function Header() {
             <LogoutButton />
           </div>
 
-          {/* Mobile Menu Button (optional) */}
-          {/* <button className="md:hidden text-gray-700 hover:text-blue-600">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button> */}
         </div>
       </div>
     </header>

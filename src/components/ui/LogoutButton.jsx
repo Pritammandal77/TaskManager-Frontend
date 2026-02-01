@@ -7,5 +7,5 @@ export default function LogoutButton() {
     window.location.href = "/login";
   };
 
-  return <button onClick={handleLogout}>Logout</button>;
+  return <button onClick={handleLogout} className="text-md bg-red-400 font-semibold px-3 py-1 rounded-xl cursor-pointer">Logout</button>;
 }
